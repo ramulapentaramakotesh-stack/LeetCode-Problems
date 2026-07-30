@@ -5,11 +5,10 @@ public:
         vector<int> temp(n);
         int left_sum = 0;
         int right_sum = 0;
-        int sum = 0;
+        temp[0] = nums[0];
 
-        for(int i=0; i<n; i++){
-            sum+=nums[i];
-            temp[i] = sum;
+        for(int i=1; i<n; i++){
+            temp[i] = temp[i-1]+nums[i];
         }
         
         for(int i=0; i<n; i++){
